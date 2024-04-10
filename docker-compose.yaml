@@ -33,11 +33,11 @@ services:
 
   products-microservice:
     container_name: products-microservice
-    build: ./products
+    build: ./products-microservice
     ports:
       - "3001:3001"
     volumes:
-      - ./products/src:/usr/src/app/src
+      - ./products-microservice/src:/usr/src/app/src
     environment: 
       - PORT=3001
       - DATABASE_URL=file:./dev.db
