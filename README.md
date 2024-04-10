@@ -1,5 +1,15 @@
-### Pasos para crear los Git Submodules
+### Dev
 
+1. Clonar el repositorio
+2. Crear el archivo `.env` basado en el `.env.template`
+3. Ejecutar el siguiente comando para actualizar los submodulos
+```
+git submodule update --init --recursive
+```
+4. Ejecutar el comando `sh start.sh` para levantar todo el proyecto usando docker
+
+
+### Pasos para crear los Git Submodules
 
 1. Crear un nuevo repositorio en GitHub
 2. Clonar el repositorio en la máquina local
