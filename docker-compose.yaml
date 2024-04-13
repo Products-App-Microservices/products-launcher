@@ -58,3 +58,19 @@ services:
       - DATABASE_URL=postgresql://postgres:123456@postgres_server:5432/ordersdb?schema=public
       - NATS_SERVERS=nats://nats_server:4222
     command: npm run start:dev
+
+  payments-microservice:
+    container_name: payments-microservice
+    build: ./payments-microservice
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./payments-microservice/src:/usr/src/app/src
+    environment:
+      - PORT=${PAYMENTS_MICROSERVICE_PORT}
+      - STRIPE_SECRET=${STRIPE_SECRET}
+      - STRIPE_SUCCESS_URL=${STRIPE_SUCCESS_URL}
+      - STRIPE_CANCEL_URL=${STRIPE_CANCEL_URL}
+      - STRIPE_SECRET_URL=${STRIPE_SECRET_URL}
+      - NATS_SERVERS=nats://nats_server:4222
+    command: npm run start:dev
