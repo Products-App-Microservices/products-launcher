@@ -10,3 +10,6 @@
 [submodule "payments-microservice"]
 	path = payments-microservice
 	url = https://github.com/Products-App-Microservices/payments-microservice.git
+[submodule "auth-microservice"]
+	path = auth-microservice
+	url = https://github.com/Products-App-Microservices/auth-microservice.git
